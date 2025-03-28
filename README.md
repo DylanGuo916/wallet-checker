@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# 🧪 Wallet Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个轻量的以太坊钱包工具，支持通过私钥快速生成钱包地址，并验证与目标地址是否匹配。基于 **React + TypeScript + Chakra UI + ethers.js** 构建，适合学习或快速验证钱包控制权。
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 功能特性
 
-## Expanding the ESLint configuration
+- 输入私钥，快速推导出对应钱包地址
+- 可选填写目标地址，检查是否匹配 ✅ / ❌
+- 自动校验私钥格式并显示错误提示
+- 使用 Chakra UI 构建，界面现代、交互友好
+- 完全前端执行，无需网络请求，安全可靠
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🧱 技术栈
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React + Vite
+- TypeScript
+- Chakra UI
+- ethers.js
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📦 TODO（后续计划）
+
+- [ ] 助记词导入钱包地址（支持 BIP39）
+- [ ] 钱包地址二维码导出
+- [ ] 查询链上余额（支持主流 RPC）
+- [ ] 简易签名 / 验证信息功能
+- [ ] 多语言助记词支持（英文/中文）
+
+---
+
+## 🛡️ 安全提醒
+
+本工具完全在浏览器本地执行，不会联网请求，也不会上传任何私钥信息。  
+建议 **仅用于学习和测试场景**，切勿使用真实资产的私钥！
+
+---
